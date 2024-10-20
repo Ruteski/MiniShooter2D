@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerControlller))]
 public class PlayerMovement : MonoBehaviour
 {
    [SerializeField]
@@ -17,14 +18,22 @@ public class PlayerMovement : MonoBehaviour
    [SerializeField]
    private float verticalPositionMinLimit = -3f;
 
+   private PlayerControlller controlller;
+
+   private void Start() {
+      controlller = GetComponent<PlayerControlller>();
+   }
+
    private void Update() {
       Move();
       LimitMovement();
    }
 
    private void Move() {
-      float horizontalInput = Input.GetAxis("Horizontal");
-      float verticalInput = Input.GetAxis("Vertical");
+      // float horizontalInput = Input.GetAxis("Horizontal");
+      // float verticalInput = Input.GetAxis("Vertical");
+      float horizontalInput = controlller.InputHandler.GetHorizontalAxis();
+      float verticalInput = controlller.InputHandler.GetVerticalAxis();
 
       Vector3 direction = new Vector2(horizontalInput, verticalInput).normalized;
       transform.position += direction * speed * Time.deltaTime;

@@ -1,10 +1,13 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerControlller))]
 public class PlayerShooter : MonoBehaviour
 {
+   private PlayerControlller controller;
    private Weapon[] weapons;
 
    private void Start() {
+      controller = GetComponent<PlayerControlller>();
       weapons = GetComponentsInChildren<Weapon>();
    }
 
@@ -13,9 +16,10 @@ public class PlayerShooter : MonoBehaviour
    }
 
    private void Shot() {
-      if (Input.GetButton("Fire1")) {
+      //if (Input.GetKeyDown(KeyCode.Space)) {
+      if (controller.InputHandler.GetFire1Button()) {
          foreach (Weapon weapon in weapons) {
-            weapon.Fire();
+            weapon.FireWhenReady();
          }
       }
    }

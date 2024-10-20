@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0000000087f6e1d44be0a1520fded5e0d905d5ec2d9d839a
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -740,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4616675732536776823, guid: c2511441d8ddf8d47bfdbf42d4c73007, type: 3}
+  cooldownTime: 0.25
 --- !u!1 &1824065256
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,8 +887,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1916881214}
   - component: {fileID: 1916881213}
+  - component: {fileID: 1916881217}
   - component: {fileID: 1916881215}
   - component: {fileID: 1916881216}
+  - component: {fileID: 1916881220}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -933,9 +936,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: -522854897
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 71a86c7c4c130934aa2058074a806335, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -992,6 +995,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb578bfc9f76994e9c3616323be4e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1916881217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916881212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1547a3f63bfa63a4dac6c8597872780e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1916881220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916881212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e8e4076ddde6e49b7def9205432552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalAxisName: Horizontal
+  verticalAxisName: Vertical
+  fire1Button: Fire1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
